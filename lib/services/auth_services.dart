@@ -8,7 +8,7 @@ class AuthServices {
   static final Future<SharedPreferences> _prefs =
       SharedPreferences.getInstance();
 
-  static Future<bool> checkLoglin() async {
+  static Future<bool> checkLogIn() async {
     final prefs = await _prefs;
     final token = prefs.getString('token');
     if (token != null) {

@@ -15,12 +15,13 @@ class _LoginScreenState extends State<LoginScreen> {
   final _password = TextEditingController();
 
   @override
-  void initState() async {
+  void initState() {
     super.initState();
-    bool loggedIn = await AuthServices.checkLoglin();
-    if (loggedIn) {
-      Navigator.pushNamed(context, '/home');
-    }
+    AuthServices.checkLogIn().then((loggedIn) {
+      if (loggedIn) {
+        Navigator.pushNamed(context, '/home');
+      }
+    });
   }
 
   Future<void> login() async {
