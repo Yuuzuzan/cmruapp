@@ -22,7 +22,7 @@ class AuthServices {
       Uri.parse('$API_URL/api/auth/login'),
       headers: {
         'Content-Type': 'application/json',
-      },
+      },  
       body: jsonEncode({
         'email': email,
         'password': password,
